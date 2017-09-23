@@ -1,7 +1,4 @@
-
-import org.gradle.script.lang.kotlin.*
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import java.io.File
 
 buildscript {
     val kotlinVersion = "1.1.4-3"
