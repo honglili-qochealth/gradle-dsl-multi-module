@@ -46,10 +46,10 @@ tasks {
     val kotlinVersion = "1.1.4-3"
 
     dependencies {
-        compile("org.springframework.boot:spring-boot-starter")
-        compile("commons-io:commons-io:2.5")
-        compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion")
-        compile("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
-        testCompile("org.springframework.boot:spring-boot-starter-test")
+        "compile"("org.springframework.boot:spring-boot-starter")
+        "compile"("commons-io:commons-io:2.5")
+        "compile"("org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion")
+        "compile"("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
+        "testCompile"("org.springframework.boot:spring-boot-starter-test")
     }
 }
