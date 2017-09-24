@@ -1,7 +1,14 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-buildscript {
+plugins {
+    base
     val kotlinVersion = "1.1.4-3"
+    kotlin("jvm") version kotlinVersion
+    kotlin("plugin.spring") version kotlinVersion
+    kotlin("plugin.allopen") version kotlinVersion
+}
+
+buildscript {
     val springBootVersion = "2.0.0.M3"
 
     repositories {
@@ -13,18 +20,12 @@ buildscript {
 
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
-        classpath("org.jetbrains.kotlin:kotlin-allopen:$kotlinVersion")
     }
 }
 
 apply {
-    plugin("base")
-    plugin("kotlin")
-    plugin("kotlin-spring")
     plugin("org.springframework.boot")
     plugin("io.spring.dependency-management")
-    plugin("org.jetbrains.kotlin.plugin.allopen")
 }
 
 tasks {
@@ -46,10 +47,10 @@ tasks {
     val kotlinVersion = "1.1.4-3"
 
     dependencies {
-        "compile"("org.springframework.boot:spring-boot-starter")
-        "compile"("commons-io:commons-io:2.5")
-        "compile"("org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion")
-        "compile"("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
-        "testCompile"("org.springframework.boot:spring-boot-starter-test")
+        compile("org.springframework.boot:spring-boot-starter")
+        compile("commons-io:commons-io:2.5")
+        compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion")
+        compile("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
+        testCompile("org.springframework.boot:spring-boot-starter-test")
     }
 }
